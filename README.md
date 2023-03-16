@@ -36,6 +36,8 @@ php app/workers/email-check.php
 php app/workers/email-send.php
 ```
 
+Логи выводятся на экран.
+
 ## Ключевые моменты
 
 * Реализация на чистом PHP
