@@ -17,7 +17,7 @@ $stmt = $dbh->prepare("insert or ignore into jobs (queue, payload, created_at)
       and emails.valid = ?
     order by users.validts");
 
-$stmt->execute([QUEUE, time(), date('Y-m-d H:i:s', strtotime('+3 days')), date('Y-m-d H:i:s', strtotime('-3 days')), 0]);
+$stmt->execute([QUEUE, time(), date('Y-m-d H:i:s', strtotime('+3 days')), date('Y-m-d H:i:s', strtotime('-3 days')), 1]);
 
 $count = $stmt->rowCount();
 
