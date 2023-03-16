@@ -9,7 +9,7 @@ const QUEUE = 'sends';
 $dbh = getDb();
 
 $stmt = $dbh->prepare("insert or ignore into jobs (queue, payload, created_at)
-    select ?, json_object('username', users.username, 'email', email), ?
+    select ?, json_object('username', users.username, 'email', emails.email), ?
     from users
              inner join emails on users.id = emails.user_id
     where users.validts <= ?
